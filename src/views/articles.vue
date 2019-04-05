@@ -129,7 +129,7 @@ export default class Articles extends Vue {
     if (process.env.NODE_ENV === "development") {
       url = "http://localhost:3001/articleDetail?";
     } else {
-      url = "https://ityouknow.com/articleDetail?";
+      url = "http://ityouknow.top/articleDetail?";
     }
     window.open(url + `article_id=${id}`);
   }

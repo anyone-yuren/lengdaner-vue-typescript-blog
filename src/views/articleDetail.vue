@@ -10,7 +10,7 @@
             <div class="avatar">
               <img class="auth-logo"
                    src="../assets/userLogo.jpeg"
-                   alt="BiaoChenXuYing">
+                   alt="lengdaner">
             </div>
             <div class="info">
               <span class="name">
@@ -48,6 +48,7 @@
           </div>
         </div>
         <div class="content">
+          <div><img :src="articleDetail.img_url" alt=""></div>
           <div id="content"
                class="article-detail"
                v-html="articleDetail.content">
