@@ -36,11 +36,12 @@
                 <img v-if="!userInfo.avatar"
                      class="user-img"
                      src="../assets/user.png"
-                     alt="BiaoChenXuYing">
+                     alt="">
                 <img v-if="userInfo.avatar"
                      class="user-img"
-                     :src="userInfo.avatar"
-                     alt="BiaoChenXuYing">
+                     src="../assets/user.png"
+                     alt="">
+                     <!-- :src="userInfo.avatar" -->
                 <el-dropdown-menu slot="dropdown">
                   <el-dropdown-item command="logout">登 出</el-dropdown-item>
                 </el-dropdown-menu>
