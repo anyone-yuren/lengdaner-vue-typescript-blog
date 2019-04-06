@@ -123,7 +123,7 @@ export default class ArticleDetail extends Vue {
   articleDetail: any = {
     toc: "",
     _id: "",
-    author: "biaochenxuying",
+    author: "lenger",
     category: [],
     comments: [],
     create_time: "",
@@ -143,7 +143,7 @@ export default class ArticleDetail extends Vue {
 
   mounted() {
     this.params.id = this.$route.query.article_id;
-    // this.params.id = "5c8cfe5d26bb39b22d3a7aec";
+    this.params.id = "5ca86fc99e89ab62a3e77fcf";
     if (this.$route.path === "/about") {
       this.params.type = 3;
     }
@@ -211,10 +211,10 @@ export default class ArticleDetail extends Vue {
   }
 
   beforeDestroy() {
-    document.title = "BiaoChenXuYing 的博客网站";
+    document.title = "lengdaner 的博客网站";
     document
       .getElementById("keywords")
-      .setAttribute("content", "BiaoChenXuYing 的博客网站");
+      .setAttribute("content", "lengdaner 的博客网站");
     document
       .getElementById("description")
       .setAttribute(
