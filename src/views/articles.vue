@@ -1,19 +1,27 @@
 <template>
   <div class="left clearfix">
-    <h3 v-if="params.tag_id"
-        class="left-title">{{tag_name}} 相关的文章：</h3>
-    <ul class="articles-list"
-        id="list">
+    <h3
+      v-if="params.tag_id"
+      class="left-title"
+    >{{tag_name}} 相关的文章：</h3>
+    <ul
+      class="articles-list"
+      id="list"
+    >
       <transition-group name="el-fade-in">
-        <li @click="articleDetail(article._id)"
-            v-for="(article) in articlesList"
-            :key="article._id"
-            class="item">
-          <img class="wrap-img img-blur-done"
-               :data-src="article.img_url"
-               data-has-lazy-src="false"
-               src="../assets/bg.jpg"
-               alt="文章封面" />
+        <li
+          @click="articleDetail(article._id)"
+          v-for="(article) in articlesList"
+          :key="article._id"
+          class="item"
+        >
+          <img
+            class="wrap-img img-blur-done"
+            :data-src="article.img_url"
+            data-has-lazy-src="false"
+            src="../assets/bg.jpg"
+            alt="文章封面"
+          />
           <div class="content">
             <h4 class="title">{{article.title}}</h4>
             <p class="abstract">{{article.desc}}</p>
@@ -21,8 +29,10 @@
               <span>查看 {{article.meta.views}}</span>
               <span>评论 {{article.meta.comments}}</span>
               <span>赞 {{article.meta.likes}}</span>
-              <span v-if="article.create_time"
-                    class="time">
+              <span
+                v-if="article.create_time"
+                class="time"
+              >
                 {{formatTime(article.create_time)}}
               </span>
             </div>
@@ -131,7 +141,8 @@ export default class Articles extends Vue {
     } else {
       url = "http://ityouknow.top/articleDetail?";
     }
-    window.open(url + `article_id=${id}`);
+    // window.open(url + `article_id=${id}`);
+    this.$router.push({ path: "articleDetail", query: { article_id: id } });
   }
   formatTime(value: any) {
     return timestampToTime(value, true);
